@@ -1,0 +1,6 @@
+res://Scenes/player.tscn
+res://Scenes/joystick.tscn
+res://Levels/level_1.tscn
+res://Entities/player.tscn
+res://Entities/UI/joystick.tscn
+res://Entities/Player/player.tscn

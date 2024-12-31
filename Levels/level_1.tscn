@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddjoqwjhvim7v"]
+
+[ext_resource type="PackedScene" uid="uid://iswbn8b1vioj" path="res://Entities/UI/joystick.tscn" id="1_jx253"]
+[ext_resource type="PackedScene" uid="uid://by63ty3n5sv4g" path="res://Entities/Player/player.tscn" id="1_xvog8"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Joystick" parent="CanvasLayer" instance=ExtResource("1_jx253")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(80, 131, 1695, -38, 2344, -121, 2938, -257, 3552, -517, 4025, -851, 4870, -888, 6176, -890, 6365, -837, 6629, -606, 6979, -350, 7604, -70, 8972, -46, 10453, -28, 10507, -2702, 12069, -2521, 12889, 2205, -1218, 1758, -3667, 1685, -3555, -2468, -3061, -2357, -2888, 181)
+
+[node name="Player" parent="." instance=ExtResource("1_xvog8")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.5, 0.5)

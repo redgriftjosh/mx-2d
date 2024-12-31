@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://iswbn8b1vioj"]
+
+[ext_resource type="Script" path="res://Scripts/joystick.gd" id="1_faj3p"]
+[ext_resource type="Texture2D" uid="uid://ob5rilmbovv6" path="res://Images/UI/BikeSpeedControl.png" id="2_erdk6"]
+[ext_resource type="Texture2D" uid="uid://cq2t1ptr84ich" path="res://Images/UI/knob.png" id="3_f456n"]
+[ext_resource type="Script" path="res://Scripts/knob.gd" id="4_4w1rw"]
+
+[node name="Joystick" type="Node2D"]
+script = ExtResource("1_faj3p")
+
+[node name="BikeSpeedControl" type="Sprite2D" parent="."]
+texture = ExtResource("2_erdk6")
+centered = false
+
+[node name="Knob" type="Sprite2D" parent="."]
+texture = ExtResource("3_f456n")
+script = ExtResource("4_4w1rw")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(300, 1000)
+offset_right = 300.0
+offset_bottom = 1000.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Button" to="Knob" method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="Knob" method="_on_button_button_up"]

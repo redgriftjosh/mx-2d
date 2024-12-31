@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://by63ty3n5sv4g"]
+
+[ext_resource type="Script" path="res://Entities/Player/player.gd" id="1_aklxi"]
+[ext_resource type="PackedScene" uid="uid://borem2651ato8" path="res://Entities/Player/wheel.tscn" id="1_f0ry1"]
+[ext_resource type="Texture2D" uid="uid://biuucayhkox7n" path="res://Images/Car/Car.png" id="2_e25s6"]
+[ext_resource type="AudioStream" uid="uid://b3k3ovd4diebi" path="res://Assets/Audio/DirtbikeEngine.wav" id="4_82sus"]
+[ext_resource type="Script" path="res://Entities/Player/engine_sounds.gd" id="5_5p5ty"]
+
+[node name="Player" type="RigidBody2D" groups=["player"]]
+script = ExtResource("1_aklxi")
+
+[node name="WheelHolder" type="PinJoint2D" parent="."]
+position = Vector2(-151, 100)
+node_a = NodePath("..")
+node_b = NodePath("Wheel")
+softness = 16.0
+
+[node name="Wheel" parent="WheelHolder" instance=ExtResource("1_f0ry1")]
+
+[node name="WheelHolder2" type="PinJoint2D" parent="."]
+position = Vector2(109, 100)
+node_a = NodePath("..")
+node_b = NodePath("Wheel")
+softness = 16.0
+
+[node name="Wheel" parent="WheelHolder2" groups=["front_wheel"] instance=ExtResource("1_f0ry1")]
+
+[node name="Car" type="Sprite2D" parent="."]
+texture = ExtResource("2_e25s6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." groups=["player"]]
+polygon = PackedVector2Array(218.057, 72.4701, 214, -7, 121, -46, 5, -60, -208, -59, -226, -42, -222, 66, -189, 102, 193, 99)
+
+[node name="EngineSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-8, 222)
+stream = ExtResource("4_82sus")
+volume_db = -6.524
+pitch_scale = 0.12
+script = ExtResource("5_5p5ty")
