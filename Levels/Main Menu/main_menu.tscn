@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckwymdxp4nisj"]
+
+[ext_resource type="Script" path="res://Levels/Main Menu/main_menu.gd" id="1_n0pc3"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_n0pc3")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 216.0
+offset_right = 378.0
+offset_bottom = 224.0
+text = "Play"
+
+[node name="TrackBuilder" type="Button" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 361.0
+offset_right = 392.0
+offset_bottom = 369.0
+text = "Track Builder"
+
+[node name="Temp" type="Button" parent="."]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 513.0
+offset_right = 455.0
+offset_bottom = 521.0
+text = "Temp
+"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="TrackBuilder" to="." method="_on_track_builder_pressed"]
+[connection signal="pressed" from="Temp" to="." method="_on_temp_pressed"]

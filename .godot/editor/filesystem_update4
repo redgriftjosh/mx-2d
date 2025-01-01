@@ -4,3 +4,12 @@ res://Levels/level_1.tscn
 res://Entities/player.tscn
 res://Entities/UI/joystick.tscn
 res://Entities/Player/player.tscn
+res://Levels/main_menu.tscn
+res://Levels/Main Menu/main_menu.tscn
+res://Levels/Main Menu/main_menu.gd
+res://Levels/Level 1/level_1.tscn
+res://Levels/Track Builder/track_builder.tscn
+res://Levels/Track Builder/track_builder.gd
+res://Levels/Track Builder/camera.gd
+res://Levels/temp/temp.tscn
+res://Levels/temp/camera_2d.gd

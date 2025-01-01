@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ycxgqtkiqtev"]
+
+[ext_resource type="Script" path="res://Levels/temp/camera_2d.gd" id="1_yddw6"]
+[ext_resource type="Texture2D" uid="uid://dnh1oi0rxtu37" path="res://Images/Car/Wheel.png" id="2_qpeeu"]
+
+[node name="Temp" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("1_yddw6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qpeeu")
